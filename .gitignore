@@ -1,0 +1,11 @@
+## Editor files
+*~
+
+## packaged jars
+target/
+
+##SNA
+svn_checkout/
+
+##yara
+yara/
