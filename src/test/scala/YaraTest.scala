@@ -1,5 +1,7 @@
 package com.feye.ScalaYara
 
+import java.nio.file.{Files, Paths}
+
 import org.specs2.mutable.Specification
 import sna.Library
 
@@ -35,6 +37,19 @@ class YaraTest extends Specification {
       output mustEqual 1
     }
     
+    "Generate the correct mime type" in { 
+      val fake_file = Files.readAllBytes(Paths.get("/usr/bin/lsof"))
+      val myLibMagic = new LibMagic("/usr/lib/x86_64-linux-gnu/libmagic.so.1")
+      val mime = myLibMagic.magicMime(fake_file)
+      mime mustEqual "application/x-sharedlib"
+    }
+    
+    "Generate the correct libmagic_type" in { 
+      val fake_file = Files.readAllBytes(Paths.get("/usr/bin/lsof"))
+      val myLibMagic = new LibMagic("/usr/lib/x86_64-linux-gnu/libmagic.so.1")
+      val mtype = myLibMagic.magicType(fake_file)
+      mtype mustEqual "ELF 64-bit LSB shared object, x86-64, version 1 (SYSV)"
+    }
   }
   
 }
