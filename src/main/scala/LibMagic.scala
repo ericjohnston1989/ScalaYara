@@ -34,6 +34,7 @@ class LibMagic(libraryLocation : String) {
   def close = {
     cLib.magic_close(magic_mime_cookie)[Unit]
     cLib.magic_close(magic_type_cookie)[Unit]
+    cLib.magic_close(magic_encoding_cookie)[Unit]
   }
   
 }
