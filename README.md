@@ -1,6 +1,6 @@
 <h4>ScalaYara</h4>
 
-<p>ScalaYara is a Scala wrapper for a number of malware research:</p>
+<p>ScalaYara is a Scala wrapper for a number of malware research tools:</p>
 
 <p><a href="https://plusvic.github.io/yara/">Yara malware research tool</a>. It enables you to use Yara from within your Scala programs. The code leverages <a href="https://code.google.com/p/scala-native-access/">Scala Native Access</a> in order to make direct calls to the Yara C API.</p>
 
