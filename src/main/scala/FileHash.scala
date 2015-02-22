@@ -6,10 +6,11 @@ import javax.xml.bind.annotation.adapters.HexBinaryAdapter
 
 object FileHash { 
   
-  val hexConverter = new HexBinaryAdapter()
+  //If this object turns out not to be threadsafe, we have major problems
+  private val hexConverter = new HexBinaryAdapter()
   
   def hash(in : Array[Byte], hashType : String) : String = { 
-    val md = MessageDigest.getInstance(hashType);
+    val md = MessageDigest.getInstance(hashType)
     hexConverter.marshal(md.digest(in)).toLowerCase
   }
   

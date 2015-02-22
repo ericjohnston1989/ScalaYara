@@ -71,6 +71,12 @@ class YaraTest extends Specification {
       val h = FileHash.sha256(fake_file.array)
       h mustEqual "dd8553477e01410b5f8e955603510ee70c48b679bef6a611b135049bb1cd2080"
     }
+    
+    "Generate a correct UUID mapping" in { 
+      val name = "ed582619eb91150717cf880e9b150f01a7e24bb79d40c58621cecc4c8c524985"
+      val myUUID = UUID5(name, UUID5.NAMESPACE_DNS).toString
+      myUUID mustEqual "56f96250-138f-5356-bf6a-29b01bf5dfaf"
+    }
   }
   
 }
