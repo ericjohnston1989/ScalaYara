@@ -8,6 +8,8 @@
 
 <p>A UUID5 implementation.</p>
 
+<p>A unix file Libmagic port -- again using SNA.</p>
+
 <h4>Dependencies</h4>
 
 <p>Java Native Access is the only jar dependency. Additionally, you will need to make sure you have a proper libyara.so file that works for your particular computer architecture. You can then store this library in your /lib folder. Details on installing libyara.so can be found <a href="http://yara.readthedocs.org/en/latest/gettingstarted.html">here</a>.</p>
